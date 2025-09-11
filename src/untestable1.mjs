@@ -1,3 +1,8 @@
+// Dates are hard to test because dates are always changing and aren't constant, with new Date() it puts 
+// a different value each day of the year
+// the use of the Date class feels kinda outdated, I feel that with the class used in the first exercise
+// this can be build better
+
 const millisPerDay = 24 * 60 * 60 * 1000;
 
 export function daysUntilChristmas() {
