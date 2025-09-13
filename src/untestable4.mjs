@@ -1,6 +1,12 @@
 import argon2 from "@node-rs/argon2";
 import pg from "pg";
 
+// The class  writes to a real persistent database, which is a problem because every change will
+// persist between tests, making it hard to make consistent test to prove that is capable to save the users and
+// password hashes. This is why for testing, is better to create a database in memory using SQlite or PostgreSQL 
+// instance so each test start with a blank state. Another issue  is that the class uses a Singleton which is sharing 
+// an instance across all tests instead of creating a fresh state for each run. 
+
 export class PostgresUserDao {
   static instance;
 
